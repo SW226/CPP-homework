@@ -30,7 +30,7 @@ void clear()
     std::getline(std::cin, s, '\n');
 }
 
-void shape_checker(std::string input)
+void shape_checker(std::string& input)
 {
     do
     {

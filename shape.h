@@ -13,4 +13,4 @@ std::ostream& operator<< (std::ostream& ostm, const shape& s);
 //std::istream& operator>> (std::istream& istm, const float& s);
 //std::istream& operator>> (std::istream& istm, const std::string& s);
 void clear();
-void shape_checker(std::string);
+void shape_checker(std::string&);
