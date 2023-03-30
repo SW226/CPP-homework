@@ -37,3 +37,25 @@ std::ostream& rectangle::print(std::ostream& ostm) const
 				<< "perimeter:" << perimeter()
 				<< ")";
 }
+
+void rectangle_checker()
+{
+    float a, b;
+    do
+    {
+        std::cout << "Please enter width and height, separated by space:"
+            << std::endl;
+        std::cin >> a >> b;
+        if (std::cin.fail())
+        {
+            std::cout << "You did not enter width and height, separated by space:"
+                << std::endl;
+            clear();
+        }
+        else
+        {
+            break;
+        }
+    } while (true);
+    std::cout << rectangle(a, b) << std::endl;
+}

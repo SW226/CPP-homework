@@ -11,3 +11,4 @@ public:
 private:
 	float m_sides[3];
 };
+void triangle_checker();

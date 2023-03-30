@@ -7,3 +7,4 @@ public:
 	square(float);
 	std::ostream& print(std::ostream&) const override;
 };
+void square_checker();

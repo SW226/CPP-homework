@@ -37,3 +37,33 @@ std::ostream& triangle::print(std::ostream& ostm) const
 				<< "perimeter:" << perimeter()
 				<< ")";
 }
+void triangle_checker()
+{
+	float a, b, c;
+	do
+	{
+		std::cout << "Please enter sides separated by space:" << std::endl;
+		std::cin >> a >> b >> c;
+
+		if (std::cin.fail())
+		{
+			std::cout << "You did not enter sides separated by space:" << std::endl;
+			clear();
+		}
+		else
+		{
+			break;
+		}
+
+	} while (true);
+
+	try
+	{
+		std::cout << triangle{ a, b, c } << std::endl;
+	}
+	catch (const std::invalid_argument& e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+
+}
