@@ -3,17 +3,12 @@
 #include <numeric>
 #include <cmath>
 #include <stdexcept>
+#include <string>
 #include "triangle.h"
 
 triangle::triangle(float side1, float side2, float side3)
  : m_sides{side1, side2 ,side3}
 {
-	if (side1 + side2 <= side3 ||
-		side1 + side3 <= side2 ||
-		side2 + side3 <= side1)
-	{
-		throw std::invalid_argument("Not a valid triangle.");
-	}
 }
 
 float triangle::area() const
@@ -50,20 +45,16 @@ void triangle_checker()
 			std::cout << "You did not enter sides separated by space:" << std::endl;
 			clear();
 		}
+		else if (a + c <= b || a + b <= c || c + b <= a)
+		{
+			std::cout << "Please enter three numbers that can form a triangle" << std::endl;
+			std::cin.clear();
+		}
 		else
 		{
 			break;
 		}
 
 	} while (true);
-
-	try
-	{
-		std::cout << triangle{ a, b, c } << std::endl;
-	}
-	catch (const std::invalid_argument& e)
-	{
-		std::cout << e.what() << std::endl;
-	}
-
+	std::cout << triangle{ a, b ,c } << std::endl;
 }

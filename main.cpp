@@ -30,5 +30,6 @@ int main(int argc, char* argv[])
     {
         triangle_checker();
     }
+
     return 0;
 }
